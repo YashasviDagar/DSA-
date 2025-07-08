@@ -1,0 +1,1 @@
+  cout<<check(s,y);
