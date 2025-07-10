@@ -14,7 +14,7 @@ string reversing(string s){
 int main(){
   string s;
   cin>>s;
-//   cout<<swapping(s);
-    cout<<reversing(s);
+  cout<<swapping(s);
+    // cout<<reversing(s);
   return 0;
 }

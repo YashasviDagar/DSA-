@@ -1,1 +1,1 @@
-  cout<<check(s,y);
+    // cout<<reversing(s);
