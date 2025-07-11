@@ -1,1 +1,2 @@
-  cout<<delete_head(head);
+nt k;
+    // cin>>
