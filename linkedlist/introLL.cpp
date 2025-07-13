@@ -83,8 +83,8 @@ int main(){
   // cout<<search(head,2);
 
   // head=delete_head(head); 
-  //head=removes_tail(head); 
-  // print(head);
+  head=removes_tail(head); 
+  print(head);
 
   
   return 0;
