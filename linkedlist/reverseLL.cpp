@@ -59,7 +59,16 @@ Node* iterative(Node* head){
 
 Node* recursive(Node* head){
     if(head==NULL || head->next==NULL) return head;
-    
+    Node* newHead=recursive(head->next);
+    Node* front=head->next;
+    front->next=head;
+    head->next=NULL;
+    return newHead;
+    /*
+    ~So here, i understand that new node will be the last element of this LL.
+    ~Now front is head's next in this case 3. now since front is 3 and its basically last element its next element will be second last element which is head itself so make front's next to head. 
+    ~Then just point head to NULL itself.
+    */
 }
 
 void print(Node* head){
@@ -70,9 +79,9 @@ void print(Node* head){
   cout<<endl;
 }
 int main(){
-  vector<int> arr={1,3,5,2,10};
+  vector<int> arr={1,3,5,2};
   Node* head = convertarrToLL(arr);
-  head=iterative(head);
+  head=recursive(head);
   print(head);
   return 0;
 } 
