@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+// Question! which numbers appears once while others are twice?
 int hashing(vector<int>& arr,int n){
     int a = arr[0];// the main reason to not use this is because of an arr can have negatives,10^7 so u cant hash it!!
                    // therefore we use map with <long long ,int >
@@ -15,6 +16,7 @@ int hashing(vector<int>& arr,int n){
     }//this can be change wrt n!
     return -1;
 }
+
 int brute(vector<int>& arr,int n){
     for(int i=0 ; i<n ; i++){
       int num=arr[i];
@@ -26,6 +28,7 @@ int brute(vector<int>& arr,int n){
     }
     return -1;
 }
+
 int mapping(vector<int>& arr,int n){
     map<long long,int> mpp;
     for(int i=0 ; i<n ; i++){  //O(NlogM) + O(n/2 + 1){this is the number of element i.e size of map}
@@ -36,6 +39,7 @@ int mapping(vector<int>& arr,int n){
     }
     return -1;
 }
+
 int optimal(vector<int>& arr, int n){
     int xorr=0;
     for(int i=0 ; i<n ; i++){ //tc-> O(N) sc->O(1)
@@ -43,6 +47,7 @@ int optimal(vector<int>& arr, int n){
     }
     return xorr;
 }
+
 int binary(vector<int>& arr,int n){
   if(n==1) return arr[0];
   if(arr[0]!=arr[1]) return arr[0];

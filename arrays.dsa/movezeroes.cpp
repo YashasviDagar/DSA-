@@ -14,6 +14,7 @@ int bruteforce(vector<int>& arr,int n){
       arr[i]=0;
     }
 }
+
 int optimal(vector<int>& arr,int n){
     int j=0;
     for(int i=0 ; i<n ; i++){
