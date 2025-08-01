@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
+//The lower bound is the smallest index, ind, where arr[ind] >= x. But if any such index is not found, 
+//the lower bound algorithm returns n i.e. size of the given array.
 int lower_bound(vector<int>& arr,int target){
     int n= arr.size();
     int low=0, high=n-1;
@@ -17,6 +19,8 @@ int lower_bound(vector<int>& arr,int target){
     }                  // i wont change my index:! 
     cout<<index;
 }
+
+//For the lower bound the condition was arr[ind] >= x and here, in the case of the upper bound, it is arr[ind] > x.
 int upper_bound(vector<int>& arr,int target){
     int n=arr.size();
     int low=0,high=n-1;
