@@ -15,7 +15,8 @@ int me_brute(vector<int> &arr, int n, long long k){
     return maxsub;
 }
 int better(vector<int>& arr, int n, long long k){
-    map<long long,int> prefixsum;//[2,0,0,3] hash store 2,2 means 2 sum till index 2: its correct but longest id 0,0,3 and not just 3 bcz x-k is 2,0,0
+    map<long long,int> prefixsum;//[2,0,0,3] hash store 2,2 means 2 sum till index 2:
+                                 //its correct but longest id 0,0,3 and not just 3 bcz x-k is 2,0,0
     long long sum=0;//sc->O(n)
     int maxlen=0;
     for(int i=0 ; i<n ; i++){
