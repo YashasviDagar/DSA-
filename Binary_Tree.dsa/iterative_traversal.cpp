@@ -58,7 +58,22 @@ void iterative_preorder(node* root){// N L R
     
 }
 
-
+void iterative_postorder(node* root){// L R N
+    if(root==NULL) return;
+    stack<node*> st1,st2;
+    st1.push(root);
+    while(!st1.empty()){//Just understand this there is no shortcut!
+        node* temp = st1.top();
+        st1.pop();
+        st2.push(temp);
+        if(root->left!=NULL) st1.push(root->left);//push left first
+        if(root->right!=NULL) st1.push(root->right);
+    }
+    while(!st2.empty()){//st2 will have the elements in the reverse post order of the BT. 
+        cout<<st2.top()->data<<" ";
+        st2.pop();
+    }
+}
 
 int main(){
   node* root = NULL;
