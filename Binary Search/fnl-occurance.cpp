@@ -14,6 +14,7 @@ int first_occur(vector<int>& arr,int target){
     }
     return first;
 }
+
 int last_occur(vector<int>& arr, int target){
     int n=arr.size();
     int low=0, high =n-1;
@@ -22,12 +23,13 @@ int last_occur(vector<int>& arr, int target){
         int mid=(low+high)/2;
         if(arr[mid]==target){
             last=mid;
-            low=mid+1;
+            low=mid+1;//Last occurance might be ahead of this mid value!
         }else if(arr[mid]<target) low=mid+1;
         else high=mid-1;
     }
     return last;
 }
+
 int main(){
   int n;    // 2*log(n) is the time complexity so if first is -1 dont call last occurance
   cin>>n;

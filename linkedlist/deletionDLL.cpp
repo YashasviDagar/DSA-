@@ -26,6 +26,7 @@ Node* convertarr2DLL(vector<int> arr){
     }
     return head;
 }
+
 Node* delHead(Node* head){
     if( head == NULL || head->next==NULL){
         return NULL;
@@ -33,10 +34,11 @@ Node* delHead(Node* head){
     Node* prev = head;
     head=head->next;
     head->back=nullptr;
-    prev->next=nullptr;
+    prev->next=nullptr;//removing the link of first head towards the next list!
     delete prev;
     return head; 
 }
+
 Node* delTail(Node* head){
     if(head==NULL || head->next==NULL) return NULL;
     Node* temp = head;
@@ -50,13 +52,14 @@ Node* delTail(Node* head){
     delete current;
     return head;
 }
+
 Node* del_kth(Node* head,int k){
     if(head==NULL) return NULL;
     Node* temp = head;
     int cnt=0;
     while(temp !=NULL){
         cnt++;
-        if(cnt==k) break;
+        if(cnt==k) break;//standing behind the kth list!
         temp=temp->next;
     }
     Node* prev = temp->back;
@@ -68,13 +71,14 @@ Node* del_kth(Node* head,int k){
     }else if(front==NULL){
         return delTail(head);
     }
-    prev->next=front;
-    front->back=prev;
-    temp->next=nullptr;
+    prev->next=front;//this skips the temp list and directly points prev to temps next!
+    front->back=prev;//this skips the temp list and directly points front to temps back!
+    temp->next=nullptr;//remove the 
     temp->back=nullptr;
     delete temp;
     return head;
 }
+
 void del_Node(Node* temp){
     //here k can't be head NEVER!
     Node* prev = temp->back;
@@ -89,12 +93,14 @@ void del_Node(Node* temp){
     temp->next= temp->back=nullptr;
     free(temp);
 }
+
 void print(Node* head){
     while(head!=NULL){
         cout<<head->data<<" ";
         head = head->next;
     }
 }
+
 int main(){
     // int k;
     // cin>>k;
