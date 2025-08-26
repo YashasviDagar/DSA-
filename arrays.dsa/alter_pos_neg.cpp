@@ -58,7 +58,7 @@ vector<int> other_type(vector<int> A, int n)
         }
 
         int index = pos.size() * 2; // this because we dont now how many extra neg elements are there but know that the equal pos and neg will be there then after that there will be more neg elememts so it makes sure that twice of pos i.e pos+(neg which are equal to pos):
-        for (int i = pos.size(); i < neg.size(); i++)
+        for (int i = pos.size(); i < neg.size(); i++)//the i with the value of index is correct because the indexing start from 0 therefore the indexing will suit the array!
         {
             A[index] = neg[i];
             index++;
