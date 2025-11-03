@@ -18,10 +18,13 @@ vector<int> findMissingRepeatingNumbers(vector<int> a) {
 
     //S-Sn = X-Y
     long long val1 = S - SN;
+
     // S2-S2n = X^2-Y^2
     long long val2 = S2 - S2N;
+
     //Find X+Y = (X^2-Y^2)/(X-Y)
     val2 = val2 / val1;
+    
     // X and Y: X = ((X+Y)+(X-Y))/2 and Y = X-(X-Y)  ALSO ->>> X-Y = val1 and X+Y = val2:
     long long x = (val1 + val2) / 2;
     long long y = x - val1;
